@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
             return;
         }
 
-        const exames = await Exame.find({ id_cliente: id });  
+        const exames = await Exame.find({ idCliente: id });  
 
         res.status(200).json({cliente, exames});
     } catch (error) {
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    const {nome, idade, RA} = req.body;
+    const {nome, idade, RA} = req.boyd;
     
     const cliente = {
         nome,
